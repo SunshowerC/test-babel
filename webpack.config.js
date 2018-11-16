@@ -61,8 +61,13 @@ module.exports = {
 		runtimeChunk: true,
 
 		splitChunks: {
-			chunks: 'all',
-			name: false,
+			cacheGroups: {
+				commons: {
+				  test: /[\\/]node_modules[\\/]/,
+				  name: 'vendors',
+				  chunks: 'all'
+				}
+			}
 		},
 	}
 	
