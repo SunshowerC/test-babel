@@ -24,8 +24,8 @@ module.exports = {
 	},
 
 	output: {
-		filename: 'js/[name]-legacy.[chunkhash:8].js',
-		chunkFilename: 'js/[name]-legacy.[chunkhash:8].chunk.js',
+		filename: 'js/[name].[chunkhash:8].js',
+		chunkFilename: 'js/[name].[chunkhash:8].chunk.js',
 	},
 	module: {
 		rules: [
@@ -39,10 +39,12 @@ module.exports = {
 						[
 							"@babel/preset-env",
 							{
-								"modules": false,
-								"useBuiltIns": 'usage'
-							}
-						],	
+								targets: {
+									esmodules: true
+								},
+							},
+						],
+							
 					]
 				}
 			}
@@ -50,14 +52,12 @@ module.exports = {
 	},
 	plugins: [
 		new BundleAnalyzerPlugin({
-			analyzerPort: 8888
+			analyzerPort: 9999
 		}),
 		new WebpackMd5Plugin(),
 		new HtmlWebpackPlugin({
-			inject: 'body',
-			// template: './public/index.html',
-			template: './dist/index.html' ,
-			
+			inject: true,
+			template: './public/index.html',
 			minify: {
 			  removeComments: true,
 			  collapseWhitespace: true,
@@ -71,8 +71,7 @@ module.exports = {
 			  minifyURLs: true,
 			},
 		  }),
-		new ModuleHtmlPlugin(false)  
-
+		new ModuleHtmlPlugin(true)  
 	],
 	mode: 'production',
 	devtool: 'sourcemap',

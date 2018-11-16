@@ -1,5 +1,7 @@
 
-import '@babel/polyfill'
+// import '@babel/polyfill'
+
+
 // import getStr01 from './module/test01'
 // import isIncludeApi from './module/test02'
 // import promiseStr from './module/test03'

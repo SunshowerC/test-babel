@@ -1,3 +1,15 @@
+
+const isModernBuild = process.env.MODERN_BUILD
+
+// const options = isModernBuild ? {
+//     targets: {
+//         esmodules: true
+//     },
+// } : {
+//     "modules": false,
+//     "useBuiltIns": 'usage'
+// }
+
 module.exports = {
     "plugins": ["@babel/plugin-syntax-dynamic-import"],
     presets: [
@@ -5,16 +17,9 @@ module.exports = {
         [
             "@babel/preset-env",
             {
-                // targets: {
-                //     esmodules: true
-                // },
                 "modules": false,
                 "useBuiltIns": 'usage'
             }
-        ],
-                
-        // ["react-app", {
-        //     absoluteRuntime: false
-        // }],
+        ]
     ]
 }
