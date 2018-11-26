@@ -1,5 +1,5 @@
 
-// import '@babel/polyfill'
+import '@babel/polyfill'
 
 
 // import getStr01 from './module/test01'

@@ -1,7 +1,9 @@
 
 
-
+import isInclude from 'test-module'
 export default ()=>{
-    return 'test01 file'
+    if(isInclude(['a', 'b', 'c'], 'c')) {
+        return 'test01 file'
+    }
 }
 

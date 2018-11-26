@@ -16,9 +16,13 @@ module.exports = {
 
         [
             "@babel/preset-env",
+            
             {
                 "modules": false,
-                "useBuiltIns": 'usage'
+                "useBuiltIns": 'usage',
+                include: [ 'es6.promise'],
+                // exclude: ['es6.promise'],
+                debug: true               
             }
         ]
     ]
